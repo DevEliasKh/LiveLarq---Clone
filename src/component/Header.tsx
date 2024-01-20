@@ -1,18 +1,28 @@
+import styled from "styled-components";
+
+const NavBar = styled.ul`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1vw;
+`;
+
 function Header() {
   return (
     <>
-      <ul>
+      <NavBar>
         <li>
-          <ul>
+          <NavBar>
             <li>SHOP ALL</li>
             <li>PURIFICATION</li>
             <li>HOME</li>
             <li>DRINKWARE</li>
-          </ul>
+          </NavBar>
         </li>
         <li>LARQ</li>
         <li>
-          <ul>
+          <NavBar>
             <li>TECHNOLOGY</li>
             <li>FAQ</li>
             <li>
@@ -21,9 +31,9 @@ function Header() {
             <li>
               <box-icon name="cart"></box-icon>
             </li>
-          </ul>
+          </NavBar>
         </li>
-      </ul>
+      </NavBar>
     </>
   );
 }
