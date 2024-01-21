@@ -8,7 +8,7 @@ const NavBar = styled.ul`
   gap: 1vw;
   font-size: 0.8vw;
   font-weight: 500;
-  padding: 1rem 2vw;
+  padding: 0.5vw 2vw;
 `;
 
 const Li = styled.li`
@@ -34,31 +34,29 @@ const LiAnimated = styled.li`
 
 function Header() {
   return (
-    <>
-      <NavBar>
-        <li>
-          <NavBar>
-            <LiAnimated>SHOP ALL</LiAnimated>
-            <LiAnimated>PURIFICATION</LiAnimated>
-            <LiAnimated>HOME</LiAnimated>
-            <LiAnimated>DRINKWARE</LiAnimated>
-          </NavBar>
-        </li>
-        <Li>LARQ</Li>
-        <li>
-          <NavBar>
-            <li>TECHNOLOGY</li>
-            <li>FAQ</li>
-            <li>
-              <box-icon name="user"></box-icon>
-            </li>
-            <li>
-              <box-icon name="cart"></box-icon>
-            </li>
-          </NavBar>
-        </li>
-      </NavBar>
-    </>
+    <NavBar>
+      <li>
+        <NavBar>
+          <LiAnimated>SHOP ALL</LiAnimated>
+          <LiAnimated>PURIFICATION</LiAnimated>
+          <LiAnimated>HOME</LiAnimated>
+          <LiAnimated>DRINKWARE</LiAnimated>
+        </NavBar>
+      </li>
+      <Li>LARQ</Li>
+      <li>
+        <NavBar>
+          <li>TECHNOLOGY</li>
+          <li>FAQ</li>
+          <li>
+            <box-icon name="user"></box-icon>
+          </li>
+          <li>
+            <box-icon name="cart"></box-icon>
+          </li>
+        </NavBar>
+      </li>
+    </NavBar>
   );
 }
 
