@@ -6,6 +6,30 @@ const NavBar = styled.ul`
   justify-content: space-between;
   align-items: center;
   gap: 1vw;
+  font-size: 0.8vw;
+  font-weight: 500;
+  padding: 1rem 2vw;
+`;
+
+const Li = styled.li`
+  font-size: 1.5rem;
+`;
+
+const LiAnimated = styled.li`
+  &::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 0;
+    transition: width 0.2s ease;
+  }
+  &:hover::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #153a5b;
+  }
 `;
 
 function Header() {
@@ -14,13 +38,13 @@ function Header() {
       <NavBar>
         <li>
           <NavBar>
-            <li>SHOP ALL</li>
-            <li>PURIFICATION</li>
-            <li>HOME</li>
-            <li>DRINKWARE</li>
+            <LiAnimated>SHOP ALL</LiAnimated>
+            <LiAnimated>PURIFICATION</LiAnimated>
+            <LiAnimated>HOME</LiAnimated>
+            <LiAnimated>DRINKWARE</LiAnimated>
           </NavBar>
         </li>
-        <li>LARQ</li>
+        <Li>LARQ</Li>
         <li>
           <NavBar>
             <li>TECHNOLOGY</li>
