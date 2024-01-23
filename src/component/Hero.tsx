@@ -10,7 +10,7 @@ const Main = styled.main`
   height: 93vh;
 
   box-sizing: border-box;
-  padding: 5vw;
+  padding: 3vw;
 
   display: flex;
   justify-content: space-between;
@@ -20,7 +20,7 @@ const Main = styled.main`
     content: "";
     background: linear-gradient(
       360deg,
-      rgba(21, 58, 91, 0.9948354341736695) 0%,
+      rgba(21, 58, 91, 1) 0%,
       rgba(255, 255, 255, 0) 100%
     );
     width: 100%;
@@ -40,24 +40,72 @@ const HeroText = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
+  gap: 1vw;
+
+  .medium-text {
+    font-size: 1vw;
+  }
+
+  .xLarge-text {
+    font-size: 3vw;
+    font-weight: 900;
+  }
+
+  .large-text {
+    font-size: 2vw;
+    width: 40ch;
+    text-align: left;
+  }
+
+  a {
+    display: flex;
+    color: rgb(21, 58, 91);
+    text-decoration: none;
+    background-color: #fff;
+    border-radius: 1rem;
+    font-weight: 600;
+    padding: 0.5vw 1.5vw;
+  }
 `;
 
 const HeroProductImg = styled.div`
+  font-size: 1vw;
+  display: flex;
+  flex-direction: column;
   z-index: 10;
+  background-color: #fff;
+  width: 12vw;
+  min-width: fit-content;
+  height: 14vw;
+  border-radius: 1rem;
+  img {
+    width: inherit;
+  }
+
+  @media (max-width: 750px) {
+    display: none;
+  }
 `;
 
 function Hero() {
   return (
     <Main>
       <HeroText>
-        <div>Drink briliantly</div>
-        <div>Poppin’ bottles in 2024</div>
-        <div>
+        <div className="medium-text">Drink briliantly</div>
+        <div className="xLarge-text">Poppin’ bottles in 2024</div>
+        <div className="large-text">
           Forget the bubbly, smart water purification is here to help crush
           those hydration goals.
         </div>
+        <a href="#">
+          <span>Shop now</span>
+          <box-icon name="right-arrow-alt"></box-icon>
+        </a>
       </HeroText>
-      <HeroProductImg>LARQ Bottle PureVls</HeroProductImg>
+      <HeroProductImg>
+        <img src="src/assets/BDMB050A.webp" alt="" />
+        LARQ Bottle PureVls
+      </HeroProductImg>
     </Main>
   );
 }
