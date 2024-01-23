@@ -39,7 +39,6 @@ const LiAnimated = styled.li`
 `;
 
 const Expanded = styled.div<{ $active?: string }>`
-  /* display: none; */
   display: ${(props) => props.$active};
   padding: 0.5vw 2vw;
   box-sizing: border-box;
