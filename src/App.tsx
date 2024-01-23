@@ -8,7 +8,7 @@ function App() {
       {/*NavBar goes here  */}
       <Header />
       {/* Hero image goes here */}
-      {/* <Hero /> */}
+      <Hero />
       {/* review section */}
 
       {/* product section */}

@@ -46,9 +46,10 @@ const Expanded = styled.div<{ $active?: string }>`
   width: 100vw;
   background-color: #fff;
   z-index: 10;
-  display: flex;
   justify-content: space-between;
   height: 50vh;
+  position: fixed;
+  top: 3vw;
   .links {
     display: flex;
     flex-direction: column;
