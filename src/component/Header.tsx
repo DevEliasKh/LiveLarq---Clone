@@ -47,9 +47,10 @@ const Expanded = styled.div<{ $active?: string }>`
   width: 100vw;
   background-color: #fff;
   z-index: 10;
-  height: 50vh;
+  height: 60vh;
   position: fixed;
   top: 3vw;
+  gap: 15vw;
   .links {
     display: flex;
     flex-direction: column;
@@ -113,6 +114,47 @@ const Expanded = styled.div<{ $active?: string }>`
     flex-grow: 1;
     display: flex;
     justify-content: space-between;
+    gap: 2vw;
+    color: #fff;
+    font-size: 14px;
+    > * {
+      background-position: 50% 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      flex: 1 1 0px;
+      &::after {
+        content: "";
+        background: linear-gradient(
+          360deg,
+          rgba(0, 0, 0, 0.5) 0%,
+          rgba(255, 255, 255, 0) 50%
+        );
+        z-index: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        top: 0;
+        left: 0;
+        border-radius: 1rem;
+      }
+    }
+
+    .purification {
+      background-image: url(/src/assets/content_section-purification.webp);
+    }
+
+    .home {
+      background-image: url(/src/assets/content_section-home.webp);
+    }
+
+    .drinkware {
+      background-image: url(/src/assets/content_section-drinkware-others.webp);
+    }
   }
 `;
 
@@ -167,18 +209,15 @@ function Header() {
           </div>
         </div>
         <div className="products">
-          <div>
-            <img src="" alt="" />
+          <div className="purification">
             <div>Purification</div>
             <div>Filter or purify water on the go</div>
           </div>
-          <div>
-            <img src="" alt="" />
+          <div className="home">
             <div>Home</div>
             <div>Equip your home with Nano Zero filtration</div>
           </div>
-          <div>
-            <img src="" alt="" />
+          <div className="drinkware">
             <div>Drinkware</div>
             <div>Hydrate effortlessly on the go</div>
           </div>

@@ -10,7 +10,7 @@ const Main = styled.main`
   height: 93vh;
 
   box-sizing: border-box;
-  padding: 3vw;
+  padding: 1.5vw 2vw;
 
   display: flex;
   justify-content: space-between;
