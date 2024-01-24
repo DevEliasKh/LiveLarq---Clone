@@ -39,14 +39,14 @@ const LiAnimated = styled.li`
 `;
 
 const Expanded = styled.div<{ $active?: string }>`
-  display: ${(props) => props.$active};
-  padding: 0.5vw 2vw;
+  display: flex;
+  /* display: ${(props) => props.$active}; */
+  padding: 0.5vw 2vw 2vw 2vw;
   box-sizing: border-box;
   align-self: self-start;
   width: 100vw;
   background-color: #fff;
   z-index: 10;
-  justify-content: space-between;
   height: 50vh;
   position: fixed;
   top: 3vw;
@@ -55,15 +55,64 @@ const Expanded = styled.div<{ $active?: string }>`
     flex-direction: column;
     justify-content: space-between;
     text-align: left;
+    a {
+      font-weight: 300;
+      &:hover {
+        color: gray;
+      }
+    }
   }
 
   .main-links {
     display: flex;
     flex-direction: column;
+    gap: 1vw;
+  }
+
+  .explore-btn,
+  .gif-btn {
+    width: fit-content;
+    display: flex;
+    border: 1px solid #153a5b;
+    border-radius: 3rem;
+    padding: 0.5vw;
+    font-weight: 300;
+
+    span {
+      margin-right: 1rem;
+    }
+  }
+
+  .gif-btn {
+    background-color: #153a5b;
+    color: #fff;
+    box-icon {
+      fill: white;
+    }
+    &:hover {
+      color: #153a5b;
+      background-color: #fff;
+      box-icon {
+        fill: #153a5b;
+      }
+    }
+  }
+
+  .learn-more {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5vw;
+    div {
+      font-size: 12px;
+      font-weight: 300;
+      color: gray;
+    }
   }
 
   .products {
+    flex-grow: 1;
     display: flex;
+    justify-content: space-between;
   }
 `;
 
@@ -100,15 +149,21 @@ function Header() {
       <Expanded $active={view}>
         <div className="links">
           <div className="main-links">
-            <a href="#">Explore all</a>
-            <a href="#">Gifts sets</a>
-            <div>Filters & Accessories</div>
-            <div>Corporate gifting</div>
+            <a href="#" className="explore-btn">
+              <span>Explore all</span>
+              <box-icon name="arrow-back" rotate="180"></box-icon>
+            </a>
+            <a href="#" className="gif-btn">
+              <span>Gifts sets</span>
+              <box-icon name="arrow-back" rotate="180"></box-icon>
+            </a>
+            <a>Filters & Accessories</a>
+            <a>Corporate gifting</a>
           </div>
           <div className="learn-more">
             <div>LEARN MORE</div>
-            <div>PureVis technology</div>
-            <div>Nano Zero technology</div>
+            <a>PureVis technology</a>
+            <a>Nano Zero technology</a>
           </div>
         </div>
         <div className="products">
