@@ -39,8 +39,7 @@ const LiAnimated = styled.li`
 `;
 
 const Expanded = styled.div<{ $active?: string }>`
-  display: flex;
-  /* display: ${(props) => props.$active}; */
+  display: ${(props) => props.$active};
   padding: 0.5vw 2vw 2vw 2vw;
   box-sizing: border-box;
   align-self: self-start;
@@ -122,25 +121,27 @@ const Expanded = styled.div<{ $active?: string }>`
       background-repeat: no-repeat;
       background-size: cover;
       border-radius: 1rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
+      display: grid;
+      grid-template: 1fr 1fr / 1fr;
       flex: 1 1 0px;
-      &::after {
+      &::before {
         content: "";
         background: linear-gradient(
           360deg,
           rgba(0, 0, 0, 0.5) 0%,
           rgba(255, 255, 255, 0) 50%
         );
-        z-index: 0;
         display: block;
-        width: 100%;
+        z-index: 0;
         height: 100%;
         position: relative;
         top: 0;
         left: 0;
         border-radius: 1rem;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 3;
       }
     }
 
@@ -154,6 +155,22 @@ const Expanded = styled.div<{ $active?: string }>`
 
     .drinkware {
       background-image: url(/src/assets/content_section-drinkware-others.webp);
+    }
+
+    .text {
+      z-index: 10;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      align-self: self-end;
+      padding-bottom: 1rem;
+      > * {
+        &:first-child {
+          font-size: 20px;
+          font-weight: 500;
+        }
+      }
     }
   }
 `;
@@ -188,6 +205,7 @@ function Header() {
           </NavBar>
         </li>
       </NavBar>
+      {/* shop all */}
       <Expanded $active={view}>
         <div className="links">
           <div className="main-links">
@@ -210,16 +228,148 @@ function Header() {
         </div>
         <div className="products">
           <div className="purification">
-            <div>Purification</div>
-            <div>Filter or purify water on the go</div>
+            <div className="text">
+              <div>Purification</div>
+              <div>Filter or purify water on the go</div>
+            </div>
           </div>
           <div className="home">
-            <div>Home</div>
-            <div>Equip your home with Nano Zero filtration</div>
+            <div className="text">
+              <div>Home</div>
+              <div>Equip your home with Nano Zero filtration</div>
+            </div>
           </div>
           <div className="drinkware">
-            <div>Drinkware</div>
-            <div>Hydrate effortlessly on the go</div>
+            <div className="text">
+              <div>Drinkware</div>
+              <div>Hydrate effortlessly on the go</div>
+            </div>
+          </div>
+        </div>
+      </Expanded>
+      {/* purification */}
+      <Expanded $active={view}>
+        <div className="links">
+          <div className="main-links">
+            <a href="#" className="explore-btn">
+              <span>Explore all</span>
+              <box-icon name="arrow-back" rotate="180"></box-icon>
+            </a>
+            <a href="#" className="gif-btn">
+              <span>Gifts sets</span>
+              <box-icon name="arrow-back" rotate="180"></box-icon>
+            </a>
+            <a>Filters & Accessories</a>
+            <a>Corporate gifting</a>
+          </div>
+          <div className="learn-more">
+            <div>LEARN MORE</div>
+            <a>PureVis technology</a>
+            <a>Nano Zero technology</a>
+          </div>
+        </div>
+        <div className="products">
+          <div className="purification">
+            <div className="text">
+              <div>Purification</div>
+              <div>Filter or purify water on the go</div>
+            </div>
+          </div>
+          <div className="home">
+            <div className="text">
+              <div>Home</div>
+              <div>Equip your home with Nano Zero filtration</div>
+            </div>
+          </div>
+          <div className="drinkware">
+            <div className="text">
+              <div>Drinkware</div>
+              <div>Hydrate effortlessly on the go</div>
+            </div>
+          </div>
+        </div>
+      </Expanded>
+      {/* Home */}
+      <Expanded $active={view}>
+        <div className="links">
+          <div className="main-links">
+            <a href="#" className="explore-btn">
+              <span>Explore all</span>
+              <box-icon name="arrow-back" rotate="180"></box-icon>
+            </a>
+            <a href="#" className="gif-btn">
+              <span>Gifts sets</span>
+              <box-icon name="arrow-back" rotate="180"></box-icon>
+            </a>
+            <a>Filters & Accessories</a>
+            <a>Corporate gifting</a>
+          </div>
+          <div className="learn-more">
+            <div>LEARN MORE</div>
+            <a>PureVis technology</a>
+            <a>Nano Zero technology</a>
+          </div>
+        </div>
+        <div className="products">
+          <div className="purification">
+            <div className="text">
+              <div>Purification</div>
+              <div>Filter or purify water on the go</div>
+            </div>
+          </div>
+          <div className="home">
+            <div className="text">
+              <div>Home</div>
+              <div>Equip your home with Nano Zero filtration</div>
+            </div>
+          </div>
+          <div className="drinkware">
+            <div className="text">
+              <div>Drinkware</div>
+              <div>Hydrate effortlessly on the go</div>
+            </div>
+          </div>
+        </div>
+      </Expanded>
+      {/* drinkware */}
+      <Expanded $active={view}>
+        <div className="links">
+          <div className="main-links">
+            <a href="#" className="explore-btn">
+              <span>Explore all</span>
+              <box-icon name="arrow-back" rotate="180"></box-icon>
+            </a>
+            <a href="#" className="gif-btn">
+              <span>Gifts sets</span>
+              <box-icon name="arrow-back" rotate="180"></box-icon>
+            </a>
+            <a>Filters & Accessories</a>
+            <a>Corporate gifting</a>
+          </div>
+          <div className="learn-more">
+            <div>LEARN MORE</div>
+            <a>PureVis technology</a>
+            <a>Nano Zero technology</a>
+          </div>
+        </div>
+        <div className="products">
+          <div className="purification">
+            <div className="text">
+              <div>Purification</div>
+              <div>Filter or purify water on the go</div>
+            </div>
+          </div>
+          <div className="home">
+            <div className="text">
+              <div>Home</div>
+              <div>Equip your home with Nano Zero filtration</div>
+            </div>
+          </div>
+          <div className="drinkware">
+            <div className="text">
+              <div>Drinkware</div>
+              <div>Hydrate effortlessly on the go</div>
+            </div>
           </div>
         </div>
       </Expanded>
