@@ -12,13 +12,13 @@ const NavBar = styled.ul`
   justify-content: space-between;
   align-items: center;
   gap: 1vw;
-  font-size: 0.8vw;
-  font-weight: 500;
+  font-size: 0.7vw;
+  font-weight: 600;
   padding: 0.5vw 2vw;
 `;
 
 const Li = styled.li`
-  font-size: 1.5rem;
+  font-size: 1.5vw;
 `;
 
 const LiAnimated = styled.li`
@@ -56,7 +56,6 @@ const Expanded = styled.div<{ $active?: string }>`
     justify-content: space-between;
     text-align: left;
     a {
-      font-weight: 300;
       &:hover {
         color: gray;
       }
@@ -76,8 +75,10 @@ const Expanded = styled.div<{ $active?: string }>`
     border: 1px solid #153a5b;
     border-radius: 3rem;
     padding: 0.5vw;
-    font-weight: 300;
-
+    font-weight: 600;
+    font-size: 0.8vw;
+    display: flex;
+    justify-content: center;
     span {
       margin-right: 1rem;
     }
@@ -157,6 +158,17 @@ const Expanded = styled.div<{ $active?: string }>`
       background-image: url(/src/assets/content_section-drinkware-others.webp);
     }
 
+    .bottlePure {
+      background-image: url(/src/assets/p1-mb-17-2-white-q.webp);
+    }
+
+    .bottleMovement {
+      background-image: url(/src/assets/p2-bo-24-2-white-q.webp);
+    }
+
+    .bottleFiltered {
+      background-image: url(/src/assets/filtered-17-ob-3.webp);
+    }
     .text {
       z-index: 10;
       grid-row-start: 1;
@@ -176,19 +188,75 @@ const Expanded = styled.div<{ $active?: string }>`
 `;
 
 function Header() {
-  const [view, setView] = useState("none");
+  const [viewSubMenu, setViewSubMenu] = useState({
+    shopAll: "none",
+    purification: "none",
+    home: "none",
+    drinkware: "none",
+  });
 
   return (
-    <Main onMouseLeave={() => setView("none")}>
+    <Main
+      onMouseLeave={() =>
+        setViewSubMenu({
+          shopAll: "none",
+          purification: "none",
+          home: "none",
+          drinkware: "none",
+        })
+      }
+    >
       <NavBar>
         <li>
           <NavBar>
-            <LiAnimated onMouseEnter={() => setView("flex")}>
+            <LiAnimated
+              onMouseEnter={() =>
+                setViewSubMenu({
+                  shopAll: "flex",
+                  purification: "none",
+                  home: "none",
+                  drinkware: "none",
+                })
+              }
+            >
               SHOP ALL
             </LiAnimated>
-            <LiAnimated>PURIFICATION</LiAnimated>
-            <LiAnimated>HOME</LiAnimated>
-            <LiAnimated>DRINKWARE</LiAnimated>
+            <LiAnimated
+              onMouseEnter={() =>
+                setViewSubMenu({
+                  shopAll: "none",
+                  purification: "flex",
+                  home: "none",
+                  drinkware: "none",
+                })
+              }
+            >
+              PURIFICATION
+            </LiAnimated>
+            <LiAnimated
+              onMouseEnter={() =>
+                setViewSubMenu({
+                  shopAll: "none",
+                  purification: "none",
+                  home: "flex",
+                  drinkware: "none",
+                })
+              }
+            >
+              HOME
+            </LiAnimated>
+            <LiAnimated
+              onMouseEnter={() =>
+                setViewSubMenu({
+                  shopAll: "none",
+                  purification: "none",
+                  home: "none",
+                  drinkware: "flex",
+                })
+              }
+            >
+              DRINKWARE
+            </LiAnimated>
           </NavBar>
         </li>
         <Li>LARQ</Li>
@@ -206,7 +274,7 @@ function Header() {
         </li>
       </NavBar>
       {/* shop all */}
-      <Expanded $active={view}>
+      <Expanded $active={viewSubMenu.shopAll}>
         <div className="links">
           <div className="main-links">
             <a href="#" className="explore-btn">
@@ -248,11 +316,11 @@ function Header() {
         </div>
       </Expanded>
       {/* purification */}
-      <Expanded $active={view}>
+      <Expanded $active={viewSubMenu.purification}>
         <div className="links">
           <div className="main-links">
             <a href="#" className="explore-btn">
-              <span>Explore all</span>
+              <span>Explore Purification</span>
               <box-icon name="arrow-back" rotate="180"></box-icon>
             </a>
             <a href="#" className="gif-btn">
@@ -269,28 +337,28 @@ function Header() {
           </div>
         </div>
         <div className="products">
-          <div className="purification">
+          <div className="bottlePure">
             <div className="text">
-              <div>Purification</div>
-              <div>Filter or purify water on the go</div>
+              <div>LARQ Bottle PureVls</div>
+              <div>FROM $109</div>
             </div>
           </div>
-          <div className="home">
+          <div className="bottleMovement">
             <div className="text">
-              <div>Home</div>
-              <div>Equip your home with Nano Zero filtration</div>
+              <div>LARQ Bottle Movement PureVis™</div>
+              <div>FROM $99</div>
             </div>
           </div>
-          <div className="drinkware">
+          <div className="bottleFiltered">
             <div className="text">
-              <div>Drinkware</div>
-              <div>Hydrate effortlessly on the go</div>
+              <div>LARQ Bottle Filtered</div>
+              <div>FROM $49.95</div>
             </div>
           </div>
         </div>
       </Expanded>
       {/* Home */}
-      <Expanded $active={view}>
+      <Expanded $active={viewSubMenu.home}>
         <div className="links">
           <div className="main-links">
             <a href="#" className="explore-btn">
@@ -332,7 +400,7 @@ function Header() {
         </div>
       </Expanded>
       {/* drinkware */}
-      <Expanded $active={view}>
+      <Expanded $active={viewSubMenu.drinkware}>
         <div className="links">
           <div className="main-links">
             <a href="#" className="explore-btn">
