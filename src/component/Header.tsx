@@ -40,17 +40,19 @@ const LiAnimated = styled.li`
 
 const Expanded = styled.div<{ $active?: string }>`
   display: ${(props) => props.$active};
-  /* display: flex; */
   padding: 0.5vw 2vw 2vw 2vw;
   box-sizing: border-box;
   align-self: self-start;
   width: 100vw;
   background-color: #fff;
   z-index: 10;
-  height: 60vh;
+  height: 26vw;
+  min-height: fit-content;
   position: fixed;
   top: 3vw;
   gap: 10vw;
+  font-size: 0.89vw;
+
   .links {
     display: flex;
     flex-direction: column;
@@ -119,13 +121,17 @@ const Expanded = styled.div<{ $active?: string }>`
     color: #fff;
     font-size: 14px;
     > * {
-      background-position: 50% 50%;
+      background-position: 50% 300%;
       background-repeat: no-repeat;
       background-size: cover;
       border-radius: 1rem;
       display: grid;
       grid-template: 1fr 1fr / 1fr;
       flex: 1 1 0px;
+    }
+
+    .bgCenter {
+      background-position: 50% 50%;
     }
 
     .shadow {
@@ -204,7 +210,7 @@ const Expanded = styled.div<{ $active?: string }>`
       grid-column-start: 1;
       grid-column-end: 3;
       align-self: self-end;
-      padding-bottom: 1rem;
+      padding-bottom: 0.7vw;
       color: ${(props) => props.color};
       font-size: 0.7vw;
       > * {
@@ -325,19 +331,20 @@ function Header() {
           </div>
         </div>
         <div className="products">
-          <div className="purification shadow">
+          z
+          <div className="purification bgCenter shadow">
             <div className="text">
               <div>Purification</div>
               <div>Filter or purify water on the go</div>
             </div>
           </div>
-          <div className="home shadow">
+          <div className="home bgCenter shadow">
             <div className="text">
               <div>Home</div>
               <div>Equip your home with Nano Zero filtration</div>
             </div>
           </div>
-          <div className="drinkware shadow">
+          <div className="drinkware bgCenter shadow">
             <div className="text">
               <div>Drinkware</div>
               <div>Hydrate effortlessly on the go</div>
