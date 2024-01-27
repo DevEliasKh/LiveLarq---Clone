@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Main = styled.main`
-  background-image: url(/src/assets/NewYear_Website_Hero_2400x1200.jpg);
+  background-image: url(./src/assets/NewYear_Website_Hero_2400x1200.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
