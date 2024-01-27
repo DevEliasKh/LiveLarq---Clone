@@ -11,7 +11,7 @@ const NavBar = styled.ul`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  gap: 1vw;
+  gap: 2vw;
   font-size: 0.7vw;
   font-weight: 600;
   padding: 0.5vw 2vw;
@@ -50,7 +50,7 @@ const Expanded = styled.div<{ $active?: string }>`
   height: 60vh;
   position: fixed;
   top: 3vw;
-  gap: 15vw;
+  gap: 10vw;
   .links {
     display: flex;
     flex-direction: column;
@@ -177,6 +177,14 @@ const Expanded = styled.div<{ $active?: string }>`
     .bottleFiltered {
       background-image: url(/src/assets/filtered-17-ob-3.webp);
     }
+
+    .pitcherBlue {
+      background-image: url(/src/assets/PAMB190A.webp);
+    }
+
+    .pitcherWhite {
+      background-image: url(/src/assets/PAPW190A.webp);
+    }
     .text {
       z-index: 10;
       grid-row-start: 1;
@@ -186,9 +194,10 @@ const Expanded = styled.div<{ $active?: string }>`
       align-self: self-end;
       padding-bottom: 1rem;
       color: ${(props) => props.color};
+      font-size: 0.7vw;
       > * {
         &:first-child {
-          font-size: 20px;
+          font-size: 1.1vw;
           font-weight: 500;
         }
       }
@@ -367,11 +376,11 @@ function Header() {
         </div>
       </Expanded>
       {/* Home */}
-      <Expanded $active={viewSubMenu.home}>
+      <Expanded $active={viewSubMenu.home} color="#153a5b">
         <div className="links">
           <div className="main-links">
             <a href="#" className="explore-btn">
-              <span>Explore all</span>
+              <span>Explore Home</span>
               <box-icon name="arrow-back" rotate="180"></box-icon>
             </a>
             <a href="#" className="gif-btn">
@@ -388,22 +397,22 @@ function Header() {
           </div>
         </div>
         <div className="products">
-          <div className="purification">
+          <div className="pitcherBlue bgColor">
             <div className="text">
-              <div>Purification</div>
-              <div>Filter or purify water on the go</div>
+              <div>LARQ Pitcher PureVis™</div>
+              <div>From €139</div>
             </div>
           </div>
-          <div className="home">
+          <div className="pitcherWhite bgColor">
             <div className="text">
-              <div>Home</div>
-              <div>Equip your home with Nano Zero filtration</div>
+              <div>LARQ Pitcher PureVis™</div>
+              <div>From €139</div>
             </div>
           </div>
-          <div className="drinkware">
+          <div className="">
             <div className="text">
-              <div>Drinkware</div>
-              <div>Hydrate effortlessly on the go</div>
+              <div></div>
+              <div></div>
             </div>
           </div>
         </div>
