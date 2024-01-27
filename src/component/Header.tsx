@@ -155,47 +155,47 @@ const Expanded = styled.div<{ $active?: string }>`
     }
 
     .purification {
-      background-image: url(/src/assets/content_section-purification.webp);
+      background-image: url(/assets/content_section-purification.webp);
     }
 
     .home {
-      background-image: url(/src/assets/content_section-home.webp);
+      background-image: url(/assets/content_section-home.webp);
     }
 
     .drinkware {
-      background-image: url(/src/assets/content_section-drinkware-others.webp);
+      background-image: url(/assets/content_section-drinkware-others.webp);
     }
 
     .bottlePure {
-      background-image: url(/src/assets/p1-mb-17-2-white-q.webp);
+      background-image: url(/assets/p1-mb-17-2-white-q.webp);
     }
 
     .bottleMovement {
-      background-image: url(/src/assets/p2-bo-24-2-white-q.webp);
+      background-image: url(/assets/p2-bo-24-2-white-q.webp);
     }
 
     .bottleFiltered {
-      background-image: url(/src/assets/filtered-17-ob-3.webp);
+      background-image: url(/assets/filtered-17-ob-3.webp);
     }
 
     .pitcherBlue {
-      background-image: url(/src/assets/PAMB190A.webp);
+      background-image: url(/assets/PAMB190A.webp);
     }
 
     .pitcherWhite {
-      background-image: url(/src/assets/PAPW190A.webp);
+      background-image: url(/assets/PAPW190A.webp);
     }
 
     .swigTop {
-      background-image: url(/src/assets/BNWGW068A.webp);
+      background-image: url(/assets/BNWGW068A.webp);
     }
 
     .flipTop {
-      background-image: url(/src/assets/BNSOB050A.webp);
+      background-image: url(/assets/BNSOB050A.webp);
     }
 
     .twistTop {
-      background-image: url(/src/assets/BNDMB050A.webp);
+      background-image: url(/assets/BNDMB050A.webp);
     }
     .text {
       z-index: 10;
