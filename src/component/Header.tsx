@@ -185,6 +185,18 @@ const Expanded = styled.div<{ $active?: string }>`
     .pitcherWhite {
       background-image: url(/src/assets/PAPW190A.webp);
     }
+
+    .swigTop {
+      background-image: url(/src/assets/BNWGW068A.webp);
+    }
+
+    .flipTop {
+      background-image: url(/src/assets/BNSOB050A.webp);
+    }
+
+    .twistTop {
+      background-image: url(/src/assets/BNDMB050A.webp);
+    }
     .text {
       z-index: 10;
       grid-row-start: 1;
@@ -418,18 +430,18 @@ function Header() {
         </div>
       </Expanded>
       {/* drinkware */}
-      <Expanded $active={viewSubMenu.drinkware}>
+      <Expanded $active={viewSubMenu.drinkware} color="#153a5b">
         <div className="links">
           <div className="main-links">
             <a href="#" className="explore-btn">
-              <span>Explore all</span>
+              <span>Explore Drinkware</span>
               <box-icon name="arrow-back" rotate="180"></box-icon>
             </a>
             <a href="#" className="gif-btn">
               <span>Gifts sets</span>
               <box-icon name="arrow-back" rotate="180"></box-icon>
             </a>
-            <a>Filters & Accessories</a>
+            <a>Accessories</a>
             <a>Corporate gifting</a>
           </div>
           <div className="learn-more">
@@ -439,22 +451,22 @@ function Header() {
           </div>
         </div>
         <div className="products">
-          <div className="purification">
+          <div className="swigTop bgColor">
             <div className="text">
-              <div>Purification</div>
-              <div>Filter or purify water on the go</div>
+              <div>LARQ Bottle Swig Top</div>
+              <div>From €35</div>
             </div>
           </div>
-          <div className="home">
+          <div className="flipTop bgColor">
             <div className="text">
-              <div>Home</div>
-              <div>Equip your home with Nano Zero filtration</div>
+              <div>LARQ Bottle Flip Top</div>
+              <div>From €39.95</div>
             </div>
           </div>
-          <div className="drinkware">
+          <div className="twistTop bgColor">
             <div className="text">
-              <div>Drinkware</div>
-              <div>Hydrate effortlessly on the go</div>
+              <div>LARQ Bottle Twist Top</div>
+              <div>From €44.95</div>
             </div>
           </div>
         </div>
