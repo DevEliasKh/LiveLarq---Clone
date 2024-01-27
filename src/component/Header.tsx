@@ -40,6 +40,7 @@ const LiAnimated = styled.li`
 
 const Expanded = styled.div<{ $active?: string }>`
   display: ${(props) => props.$active};
+  /* display: flex; */
   padding: 0.5vw 2vw 2vw 2vw;
   box-sizing: border-box;
   align-self: self-start;
@@ -78,7 +79,7 @@ const Expanded = styled.div<{ $active?: string }>`
     font-weight: 600;
     font-size: 0.8vw;
     display: flex;
-    justify-content: center;
+    align-items: center;
     span {
       margin-right: 1rem;
     }
@@ -125,6 +126,9 @@ const Expanded = styled.div<{ $active?: string }>`
       display: grid;
       grid-template: 1fr 1fr / 1fr;
       flex: 1 1 0px;
+    }
+
+    .shadow {
       &::before {
         content: "";
         background: linear-gradient(
@@ -144,6 +148,10 @@ const Expanded = styled.div<{ $active?: string }>`
         grid-column-start: 1;
         grid-column-end: 3;
       }
+    }
+
+    .bgColor {
+      background-color: #f5f6fa;
     }
 
     .purification {
@@ -177,6 +185,7 @@ const Expanded = styled.div<{ $active?: string }>`
       grid-column-end: 3;
       align-self: self-end;
       padding-bottom: 1rem;
+      color: ${(props) => props.color};
       > * {
         &:first-child {
           font-size: 20px;
@@ -295,19 +304,19 @@ function Header() {
           </div>
         </div>
         <div className="products">
-          <div className="purification">
+          <div className="purification shadow">
             <div className="text">
               <div>Purification</div>
               <div>Filter or purify water on the go</div>
             </div>
           </div>
-          <div className="home">
+          <div className="home shadow">
             <div className="text">
               <div>Home</div>
               <div>Equip your home with Nano Zero filtration</div>
             </div>
           </div>
-          <div className="drinkware">
+          <div className="drinkware shadow">
             <div className="text">
               <div>Drinkware</div>
               <div>Hydrate effortlessly on the go</div>
@@ -316,7 +325,7 @@ function Header() {
         </div>
       </Expanded>
       {/* purification */}
-      <Expanded $active={viewSubMenu.purification}>
+      <Expanded $active={viewSubMenu.purification} color="#153a5b">
         <div className="links">
           <div className="main-links">
             <a href="#" className="explore-btn">
@@ -337,19 +346,19 @@ function Header() {
           </div>
         </div>
         <div className="products">
-          <div className="bottlePure">
+          <div className="bottlePure bgColor">
             <div className="text">
               <div>LARQ Bottle PureVls</div>
               <div>FROM $109</div>
             </div>
           </div>
-          <div className="bottleMovement">
+          <div className="bottleMovement bgColor">
             <div className="text">
               <div>LARQ Bottle Movement PureVis™</div>
               <div>FROM $99</div>
             </div>
           </div>
-          <div className="bottleFiltered">
+          <div className="bottleFiltered bgColor">
             <div className="text">
               <div>LARQ Bottle Filtered</div>
               <div>FROM $49.95</div>
