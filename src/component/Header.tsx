@@ -4,6 +4,10 @@ import { useState } from "react";
 const Main = styled.header`
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `;
 
 const NavBar = styled.ul`
@@ -331,7 +335,6 @@ function Header() {
           </div>
         </div>
         <div className="products">
-          z
           <div className="purification bgCenter shadow">
             <div className="text">
               <div>Purification</div>
@@ -478,7 +481,6 @@ function Header() {
           </div>
         </div>
       </Expanded>
-      <div />
     </Main>
   );
 }
