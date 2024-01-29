@@ -2,6 +2,7 @@ import "./App.css";
 import "boxicons";
 import Header from "./component/Header";
 import HeaderMd from "./component/HeaderMd";
+import HeaderSm from "./component/HeaderSm";
 import Hero from "./component/Hero";
 function App() {
   return (
@@ -10,6 +11,8 @@ function App() {
       <Header />
       {/* NavBar for less than 1200px */}
       <HeaderMd />
+      {/* Header for less than 800px */}
+      <HeaderSm />
       {/* Hero image goes here */}
       <Hero />
       {/* review section */}

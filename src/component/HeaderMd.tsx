@@ -5,6 +5,10 @@ const Main = styled.header<{ $display?: string }>`
   @media (min-width: 1200px) {
     display: none;
   }
+
+  @media (max-width: 780px) {
+    display: none;
+  }
   box-sizing: border-box;
   padding: 2vw;
   position: absolute;
