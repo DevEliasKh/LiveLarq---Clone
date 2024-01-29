@@ -6,17 +6,20 @@ const Main = styled.main`
   background-size: cover;
   background-position: 50% 50%;
 
-  width: 100vw;
+  width: inherit;
   height: 93vh;
+  position: relative;
+  top: 0;
+  left: 0;
 
-  box-sizing: border-box;
   padding: 1.5vw 2vw;
+  box-sizing: border-box;
 
   display: flex;
   justify-content: space-between;
   align-items: end;
 
-  &::after {
+  &::before {
     content: "";
     background: linear-gradient(
       360deg,
@@ -28,7 +31,7 @@ const Main = styled.main`
     display: block;
     z-index: 0;
     position: absolute;
-    top: 7vh;
+    top: 0;
     left: 0;
   }
 `;

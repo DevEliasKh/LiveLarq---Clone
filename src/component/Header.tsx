@@ -4,13 +4,26 @@ import { useState } from "react";
 const Main = styled.header`
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  width: inherit;
 
   @media (max-width: 1200px) {
     display: none;
   }
 `;
 
-const NavBar = styled.ul`
+const NavBar = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: inherit;
+  font-size: 0.7vw;
+  font-weight: 600;
+  padding: 0.5vw 2vw;
+  box-sizing: border-box;
+`;
+
+const NavBarMini = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -18,14 +31,14 @@ const NavBar = styled.ul`
   gap: 2vw;
   font-size: 0.7vw;
   font-weight: 600;
-  padding: 0.5vw 2vw;
+  box-sizing: border-box;
 `;
 
-const Li = styled.li`
+const Li = styled.div`
   font-size: 1.5vw;
 `;
 
-const LiAnimated = styled.li`
+const LiAnimated = styled.div`
   &::after {
     content: "";
     display: block;
@@ -124,6 +137,7 @@ const Expanded = styled.div<{ $active?: string }>`
     gap: 2vw;
     color: #fff;
     font-size: 14px;
+    box-sizing: border-box;
     > * {
       background-position: 50% 300%;
       background-repeat: no-repeat;
@@ -132,6 +146,7 @@ const Expanded = styled.div<{ $active?: string }>`
       display: grid;
       grid-template: 1fr 1fr / 1fr;
       flex: 1 1 0px;
+      box-sizing: border-box;
     }
 
     .bgCenter {
@@ -215,6 +230,7 @@ const Expanded = styled.div<{ $active?: string }>`
       grid-column-end: 3;
       align-self: self-end;
       padding-bottom: 0.7vw;
+      box-sizing: border-box;
       color: ${(props) => props.color};
       font-size: 0.7vw;
       > * {
@@ -247,8 +263,8 @@ function Header() {
       }
     >
       <NavBar>
-        <li>
-          <NavBar>
+        <div>
+          <NavBarMini>
             <LiAnimated
               onMouseEnter={() =>
                 setViewSubMenu({
@@ -297,21 +313,21 @@ function Header() {
             >
               DRINKWARE
             </LiAnimated>
-          </NavBar>
-        </li>
+          </NavBarMini>
+        </div>
         <Li>LARQ</Li>
-        <li>
-          <NavBar>
-            <li>TECHNOLOGY</li>
-            <li>FAQ</li>
-            <li>
+        <div>
+          <NavBarMini>
+            <div>TECHNOLOGY</div>
+            <div>FAQ</div>
+            <div>
               <box-icon name="user"></box-icon>
-            </li>
-            <li>
+            </div>
+            <div>
               <box-icon name="cart"></box-icon>
-            </li>
-          </NavBar>
-        </li>
+            </div>
+          </NavBarMini>
+        </div>
       </NavBar>
       {/* shop all */}
       <Expanded $active={viewSubMenu.shopAll}>

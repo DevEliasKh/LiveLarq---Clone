@@ -4,6 +4,7 @@ import Header from "./component/Header";
 import HeaderMd from "./component/HeaderMd";
 import HeaderSm from "./component/HeaderSm";
 import Hero from "./component/Hero";
+import Review from "./component/Review";
 function App() {
   return (
     <>
@@ -16,7 +17,7 @@ function App() {
       {/* Hero image goes here */}
       <Hero />
       {/* review section */}
-
+      <Review />
       {/* product section */}
 
       {/* product feature section */}
