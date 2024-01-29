@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { useState } from "react";
 
 const Main = styled.main<{ $display?: string }>`
@@ -63,12 +63,42 @@ const Main = styled.main<{ $display?: string }>`
   }
 `;
 
+const FadeInLeft = keyframes`
+  0% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+`;
+
+const NavBar = styled.nav<{ $display?: string }>`
+  display: flex;
+  justify-content: space-between;
+  .menuIcon {
+    display: ${(props) => (props.$display == "none" ? "flex" : "none")};
+  }
+
+  .xIcon {
+    display: ${(props) => props.$display};
+  }
+
+  .icon {
+    display: flex;
+    gap: 1vw;
+  }
+`;
+
 const Product = styled.div`
   display: flex;
   justify-content: space-between;
-  /* border: 1px solid #000; */
   border-radius: 1rem;
   background-color: #ebf3f9;
+  animation: ${FadeInLeft} 1s ease 0s 1 normal forwards;
+
   .text {
     display: flex;
     flex-direction: column;
@@ -108,25 +138,6 @@ const Product = styled.div`
     background-image: url(/assets/content_section-drinkware-others.webp);
   }
 `;
-
-const NavBar = styled.nav<{ $display?: string }>`
-  display: flex;
-  justify-content: space-between;
-
-  .menuIcon {
-    display: ${(props) => (props.$display == "none" ? "flex" : "none")};
-  }
-
-  .xIcon {
-    display: ${(props) => props.$display};
-  }
-
-  .icon {
-    display: flex;
-    gap: 1vw;
-  }
-`;
-
 function HeaderSm() {
   const [menuDisplay, setMenuDisplay] = useState("none");
   return (

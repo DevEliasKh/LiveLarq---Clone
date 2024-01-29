@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { useState } from "react";
 
 const Main = styled.header<{ $display?: string }>`
@@ -18,6 +18,18 @@ const Main = styled.header<{ $display?: string }>`
   display: flex;
   flex-direction: column;
   gap: 1vw;
+`;
+
+const FadeInLeft = keyframes`
+  0% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
 `;
 
 const Content = styled.div<{ $display?: string }>`
@@ -103,6 +115,7 @@ const Content = styled.div<{ $display?: string }>`
       display: grid;
       grid-template: 1fr 1fr / 1fr;
       flex: 1 1 0px;
+      position: relative;
     }
 
     .shadow {
@@ -147,14 +160,17 @@ const Content = styled.div<{ $display?: string }>`
 
     .purification {
       background-image: url(/assets/content_section-purification.webp);
+      animation: ${FadeInLeft} 1s ease 0s 1 normal forwards;
     }
 
     .home {
       background-image: url(/assets/content_section-home.webp);
+      animation: ${FadeInLeft} 1s ease 0s 1 normal forwards;
     }
 
     .drinkware {
       background-image: url(/assets/content_section-drinkware-others.webp);
+      animation: ${FadeInLeft} 1s ease 0s 1 normal forwards;
     }
   }
 `;
