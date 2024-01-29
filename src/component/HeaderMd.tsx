@@ -23,7 +23,8 @@ const Main = styled.header<{ $display?: string }>`
 const Content = styled.div<{ $display?: string }>`
   display: ${(props) => props.$display};
   flex-direction: column;
-  height: calc(100vh - 64px);
+  min-height: calc(100vh - 64px);
+  max-height: fit-content;
   gap: 1vw;
   .links {
     display: flex;
@@ -41,7 +42,7 @@ const Content = styled.div<{ $display?: string }>`
     display: flex;
     flex-direction: column;
     gap: 1vw;
-    font-size: 1.1vw;
+    font-size: 1.5vw;
   }
 
   .explore-btn,
@@ -52,7 +53,7 @@ const Content = styled.div<{ $display?: string }>`
     border-radius: 3rem;
     padding: 0.1vw 0.5vw;
     font-weight: 600;
-    font-size: 1vw;
+    font-size: 1.5vw;
     display: flex;
     align-items: center;
     span {
