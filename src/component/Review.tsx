@@ -61,6 +61,7 @@ const ReviewDetail = styled.div`
   display: flex;
   width: 100%;
   gap: 1vw;
+  overflow-x: scroll;
 
   > * {
     flex: 1 0 0;
@@ -72,10 +73,10 @@ const ReviewDetail = styled.div`
     padding: 1vw;
     text-align: left;
     border-radius: 1rem;
-
     > * {
       &:first-child {
         font-size: 1.3rem;
+        min-width: 20ch;
       }
     }
   }

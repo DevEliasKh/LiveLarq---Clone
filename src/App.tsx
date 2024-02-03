@@ -5,6 +5,7 @@ import HeaderMd from "./component/HeaderMd";
 import HeaderSm from "./component/HeaderSm";
 import Hero from "./component/Hero";
 import Review from "./component/Review";
+import ProductSection from "./component/Product";
 function App() {
   return (
     <>
@@ -19,7 +20,7 @@ function App() {
       {/* review section */}
       <Review />
       {/* product section */}
-
+      <ProductSection />
       {/* product feature section */}
 
       {/* trending section with bar to scroll horizontally */}
