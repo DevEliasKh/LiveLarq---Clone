@@ -61,6 +61,7 @@ const ReviewDetail = styled.div`
   display: flex;
   width: 100%;
   gap: 1vw;
+
   > * {
     flex: 1 0 0;
     display: flex;

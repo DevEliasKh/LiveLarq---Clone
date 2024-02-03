@@ -27,7 +27,7 @@ const Main = styled.main`
       rgba(255, 255, 255, 0) 100%
     );
     width: 100%;
-    height: 93vh;
+    height: 94vh;
     display: block;
     z-index: 0;
     position: absolute;
