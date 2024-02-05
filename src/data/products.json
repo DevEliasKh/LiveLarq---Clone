@@ -1,0 +1,67 @@
+[
+  {
+    "type": "Jetest & Go",
+    "list": [
+      {
+        "subName": "Obsididan Black",
+        "img": "/assets/productsList/SET-FILTERED-UVC-M-OB.webp",
+        "price": 109
+      },
+      {
+        "subName": "Granite White",
+        "img": "/assets/productsList/SET-FILTERED-UVC-M-GW (1).webp",
+        "price": 109
+      }
+    ]
+  },
+  {
+    "type": "Swing Squad",
+    "list": [
+      {
+        "subName": "680 ml",
+        "img": "/assets/productsList/SET-3XSWIGM.webp",
+        "price": 109
+      },
+      {
+        "subName": "1000 ml",
+        "img": "/assets/productsList/SET-3XSWIGL.webp",
+        "price": 129
+      }
+    ]
+  },
+  {
+    "type": "LRQ Bottle PureVise",
+    "list": [
+      {
+        "subName": "Monaco Blue",
+        "img": "/assets/productsList/BDMB050A.webp",
+        "price": 109
+      },
+      {
+        "subName": "Obsididan Black",
+        "img": "/assets/productsList/BDOB050A.webp",
+        "price": 109
+      },
+      {
+        "subName": "Seaside Mint",
+        "img": "/assets/productsList/BDSM050A.webp",
+        "price": 109
+      },
+      {
+        "subName": "Granite White",
+        "img": "/assets/productsList/BDGW050A.webp",
+        "price": 109
+      },
+      {
+        "subName": "Himalayan Pink",
+        "img": "/assets/productsList/BDHP050A.webp",
+        "price": 109
+      }
+    ]
+  },
+  {},
+  {},
+  {},
+  {},
+  {}
+]

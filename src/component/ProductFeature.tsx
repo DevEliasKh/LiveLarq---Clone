@@ -32,7 +32,7 @@ const Item = styled.div`
     font-weight: 600;
   }
   div {
-    max-width: 60ch;
+    max-width: 50ch;
     font-size: 1vw;
   }
 

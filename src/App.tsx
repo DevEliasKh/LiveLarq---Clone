@@ -7,6 +7,7 @@ import Hero from "./component/Hero";
 import Review from "./component/Review";
 import ProductSection from "./component/Product";
 import ProductFeature from "./component/ProductFeature";
+import Trending from "./component/Trending";
 function App() {
   return (
     <>
@@ -25,7 +26,7 @@ function App() {
       {/* product feature section */}
       <ProductFeature />
       {/* trending section with bar to scroll horizontally */}
-
+      <Trending />
       {/* our mission section */}
 
       {/* basq magazine */}
