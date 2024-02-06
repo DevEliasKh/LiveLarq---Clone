@@ -11,7 +11,7 @@ const Main = styled.main`
 
 const Products = styled.section`
   display: flex;
-  overflow-x: scroll;
+  /* overflow-x: scroll; */
   gap: 1vw;
 `;
 
@@ -20,28 +20,36 @@ const Card = styled.div`
   flex-direction: column;
 `;
 
+const go = ProductList[1].list;
 function ProductCard() {
   return (
-    <Card>
-      <img src="" alt="" />
-      <div>Jetset & Go</div>
-      <div>Obsidian Black</div>
-      <div>
-        <div>img</div>
-        <div>img</div>
-      </div>
-      <div>From $109</div>
-    </Card>
+    <>
+      {go.map((item) => {
+        return (
+          <Card>
+            <img src={item.img} alt="" />
+            <div>Jetset & Go</div>
+            <div>{item.subName}</div>
+            <div>
+              <div>img</div>
+              <div>img</div>
+            </div>
+            <div>From ${item.price}</div>
+          </Card>
+        );
+      })}
+    </>
   );
 }
 
 function Trending() {
-  console.log(ProductList);
+  console.log(go);
   return (
     <Main>
       <div>Now Trending</div>
       <Products>
         <ProductCard />
+
         <div>Swing Squad</div>
         <div>LARQ Bottle </div>
       </Products>
