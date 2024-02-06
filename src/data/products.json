@@ -59,9 +59,106 @@
       }
     ]
   },
-  {},
-  {},
-  {},
-  {},
-  {}
+  {
+    "type": "LRQ Pitcher PureVise",
+    "list": [
+      {
+        "subName": "Monaco Blue",
+        "img": "/assets/productsList/PAMB190A.webp",
+        "price": 139
+      },
+      {
+        "subName": "Pure White",
+        "img": "/assets/productsList/PAPW190A.webp",
+        "price": 139
+      }
+    ]
+  },
+  {
+    "type": "LRQ Bottle Swig Top",
+    "list": [
+      {
+        "subName": "Obsididan Black",
+        "img": "/assets/productsList/BNWOB068A.webp",
+        "price": 44.95
+      },
+
+      {
+        "subName": "Granite White",
+        "img": "/assets/productsList/BNWGW068A.webp",
+        "price": 44.95
+      },
+      {
+        "subName": "Eucalyptus Green",
+        "img": "/assets/productsList/BNWEG068A.webp",
+        "price": 44.95
+      }
+    ]
+  },
+  {
+    "type": "LRQ Bottle Filtered",
+    "list": [
+      {
+        "subName": "Obsididan Black",
+        "img": "/assets/productsList/BFDOB050A.webp",
+        "price": 44.95
+      },
+
+      {
+        "subName": "Granite White",
+        "img": "/assets/productsList/BFDGW050A.webp",
+        "price": 44.95
+      }
+    ]
+  },
+  {
+    "type": "LRQ Bottle Flip Top",
+    "list": [
+      {
+        "subName": "Obsididan Black",
+        "img": "/assets/productsList/BNSOB050A.webp",
+        "price": 39.95
+      },
+      {
+        "subName": "Seaside Mint",
+        "img": "/assets/productsList/BNSSM050A.webp",
+        "price": 39.95
+      },
+      {
+        "subName": "Granite White",
+        "img": "/assets/productsList/BNSGW050A.webp",
+        "price": 39.95
+      }
+    ]
+  },
+  {
+    "type": "LRQ Bottle Twist Top",
+    "list": [
+      {
+        "subName": "Monaco Blue",
+        "img": "/assets/productsList/BNDMB050A.webp",
+        "price": 35
+      },
+      {
+        "subName": "Obsididan Black",
+        "img": "/assets/productsList/BNDOB050A.webp",
+        "price": 35
+      },
+      {
+        "subName": "Seaside Mint",
+        "img": "/assets/productsList/BNDSM050A.webp",
+        "price": 35
+      },
+      {
+        "subName": "Granite White",
+        "img": "/assets/productsList/BBNDGW050A.webp",
+        "price": 35
+      },
+      {
+        "subName": "Himalayan Pink",
+        "img": "/assets/productsList/BNDHP050A.webp",
+        "price": 35
+      }
+    ]
+  }
 ]
