@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import ProductList from "../data/products.json";
-// import { useState } from "react";
 
 const Main = styled.main`
   display: flex;
@@ -52,10 +51,13 @@ const Card = styled.div`
 
   .options {
     display: flex;
+    gap: 0.4vw;
 
     img {
       width: 5vw;
       height: 5vw;
+      border: #153a5b 0.1px solid;
+      border-radius: 0.5rem;
     }
   }
 
@@ -65,7 +67,6 @@ const Card = styled.div`
 `;
 
 function ProductCard() {
-  // const [showProduct, setShowProduct] = useState();
   const go = ProductList;
   console.log(go);
   return (
