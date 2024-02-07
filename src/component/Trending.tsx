@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import ProductList from "../data/products.json";
+// import { useState } from "react";
 
 const Main = styled.main`
   display: flex;
@@ -36,7 +37,7 @@ const Card = styled.div`
   padding: 1.5vw;
   margin-bottom: 1vw;
   img {
-    width: 25vw;
+    max-width: 25vw;
   }
 
   .type {
@@ -52,11 +53,7 @@ const Card = styled.div`
   .options {
     display: flex;
 
-    a {
-      background-image: url(/assets/productsList/SET-FILTERED-UVC-M-OB.webp);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: 50% 50%;
+    img {
       width: 5vw;
       height: 5vw;
     }
@@ -68,6 +65,7 @@ const Card = styled.div`
 `;
 
 function ProductCard() {
+  // const [showProduct, setShowProduct] = useState();
   const go = ProductList;
   console.log(go);
   return (
@@ -79,8 +77,9 @@ function ProductCard() {
             <div className="type">{type}</div>
             <div className="subName">{list[0].subName}</div>
             <div className="options">
-              <a></a>
-              <a></a>
+              {list.map((item) => {
+                return <img src={item.img} alt="" />;
+              })}
             </div>
             <div className="price">From ${list[0].price}</div>
           </Card>
