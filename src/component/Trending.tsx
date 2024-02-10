@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import ProductList from "../data/products.json";
 import { useState } from "react";
+import type { productData, product } from "../model/product";
 
 const Main = styled.main`
   display: flex;
@@ -74,8 +75,7 @@ const Button = styled.button<{ $src?: string }>`
 `;
 
 function ProductCard() {
-  const productList = ProductList;
-  const productLists = ProductList.map((item) => {
+  const productLists: Array<[string, product]> = ProductList.map((item) => {
     return [item.type, item.list[0]];
   });
   const [showProduct, setShowProduct] = useState(productLists);
@@ -89,7 +89,7 @@ function ProductCard() {
       }
     });
 
-    productList.map((item) => {
+    ProductList.map((item) => {
       if (item.type === dataType) {
         const currentList = item.list;
         const currentProduct = currentList.filter(
@@ -97,7 +97,7 @@ function ProductCard() {
         );
         const leftSide = showProduct.slice(0, index);
         const rightSide = showProduct.slice(index + 1);
-        const newShowProduct = [
+        const newShowProduct: Array<[string, product]> = [
           ...leftSide,
           [dataType, currentProduct[0]],
           ...rightSide,
@@ -106,27 +106,38 @@ function ProductCard() {
       }
     });
   }
-  showProduct.map((item) => console.log(item));
   return (
     <>
-      {productList.map(({ type, list }) => {
+      {showProduct.map((item: [string, product]) => {
+        const type: string = item[0];
+        const product: product = item[1];
         return (
-          <Card key={type}>
-            <img src={list[0].img} alt="" />
+          <Card>
+            <img src={product.img} alt="" />
             <div className="type">{type}</div>
-            <div className="subName">{list[0].subName}</div>
+            <div className="subName">{product.subName}</div>
             <div className="options">
-              {list.map((item) => {
-                return (
-                  <Button
-                    $src={item.img}
-                    key={item.subName + type}
-                    onClick={() => HandleClickForOptions(type, item.subName)}
-                  ></Button>
-                );
+              {ProductList.map(({ type, list }: productData) => {
+                if (type === item[0]) {
+                  return (
+                    <>
+                      {list.map((element) => {
+                        return (
+                          <Button
+                            $src={element.img}
+                            key={element.subName + type}
+                            onClick={() =>
+                              HandleClickForOptions(type, element.subName)
+                            }
+                          ></Button>
+                        );
+                      })}
+                    </>
+                  );
+                }
               })}
             </div>
-            <div className="price">From ${list[0].price}</div>
+            <div className="price">From ${product.price}</div>
           </Card>
         );
       })}
