@@ -49,6 +49,7 @@ const Card = styled.div`
 
   .subName {
     font-weight: 300;
+    font-size: 1vw;
   }
 
   .options {
@@ -58,6 +59,7 @@ const Card = styled.div`
 
   .price {
     font-weight: 300;
+    font-size: 0.9vw;
   }
 `;
 
