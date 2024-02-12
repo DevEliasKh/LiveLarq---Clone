@@ -1,6 +1,7 @@
+import { useState } from "react";
 import styled from "styled-components";
 
-const Main = styled.main`
+const Main = styled.main<{ $showMore?: boolean }>`
   background-image: url(public/assets/our_mission.webp);
   background-repeat: no-repeat;
   background-size: cover;
@@ -53,17 +54,23 @@ const Main = styled.main`
     transition: left 1s;
 
     &:hover {
-      left: 10%;
+      left: ${(props) => (!props.$showMore ? "10%" : "")};
     }
+
+    left: ${(props) => (props.$showMore ? "-20%" : "")};
   }
 `;
 
-const Info = styled.section`
+const Info = styled.section<{ $showMore?: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: start;
   gap: 2vw;
   z-index: 10;
+  position: relative;
+  left: 0;
+  left: ${(props) => (props.$showMore ? "-40%" : "")};
+  transition: left 1s;
   h2 {
     font-size: 2rem;
     font-weight: 500;
@@ -80,14 +87,25 @@ const Info = styled.section`
     font-size: 1.5rem;
     font-weight: 300;
   }
-
-  button {
-    border: none;
-    padding: 0.5vw 1vw;
-    border-radius: 2rem;
-    font-size: 1.1rem;
+  .btns {
     display: flex;
-    gap: 1vw;
+    button {
+      border: none;
+      padding: 0.5vw 1vw;
+      border-radius: 2rem;
+      font-size: 1.1rem;
+      display: flex;
+      gap: 1vw;
+    }
+
+    .backBtn {
+      background-color: transparent;
+      border: 2px solid white;
+      color: white;
+      position: relative;
+      right: ${(props) => (props.$showMore ? "-200%" : "150%")};
+      transition: all 1s;
+    }
   }
 `;
 
@@ -107,7 +125,7 @@ const Card = styled.section<{ $img?: string }>`
   box-sizing: border-box;
   padding: 1vw;
   height: 50vh;
-  width: 35ch;
+  width: 40ch;
   position: relative;
   &::before {
     content: "";
@@ -117,7 +135,7 @@ const Card = styled.section<{ $img?: string }>`
       rgba(255, 255, 255, 0) 50%,
       rgba(255, 255, 255, 0) 100%
     );
-    width: 35ch;
+    width: 40ch;
     height: 50vh;
     display: block;
     z-index: 0;
@@ -143,21 +161,31 @@ const Card = styled.section<{ $img?: string }>`
 `;
 
 function OurMission() {
+  const [showMore, setShowMore] = useState(false);
+  function clickHandler() {
+    setShowMore(!showMore);
+  }
   return (
-    <Main>
-      <Info>
+    <Main $showMore={showMore}>
+      <Info $showMore={showMore}>
         <h2>Our mission</h2>
         <h1>Drink brilliantly</h1>
         <p>
           We make it easy to opt for the healthier and more sustainable
           hydration choice, anytime and anywhere.
         </p>
-        <button>
-          <span>Learn more</span>
-          <box-icon name="arrow-back" rotate="180" color="gray"></box-icon>
-        </button>
+        <div className="btns">
+          <button onClick={() => clickHandler()}>
+            <span>Learn more</span>
+            <box-icon name="arrow-back" rotate="180" color="gray"></box-icon>
+          </button>
+          <button onClick={() => setShowMore(false)} className="backBtn">
+            <span>Back</span>
+            <box-icon name="arrow-back" color="white"></box-icon>
+          </button>
+        </div>
       </Info>
-      <div className="cards">
+      <div className="cards" onClick={() => clickHandler()}>
         <Card $img="mission-1">
           <h1>Award winning design</h1>
           <div>When it comes to form and function, we’ve got it down.</div>
