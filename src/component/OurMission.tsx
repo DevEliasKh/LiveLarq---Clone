@@ -144,6 +144,12 @@ const Card = styled.section<{ $img?: string }>`
     left: 0;
   }
 
+  > * {
+    position: relative;
+    top: 10%;
+    transition: top 1s;
+  }
+
   h1 {
     z-index: 10;
     font-size: 1.2rem;
@@ -156,7 +162,31 @@ const Card = styled.section<{ $img?: string }>`
   }
 
   button {
-    display: none;
+    display: flex;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    z-index: 10;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.5vw;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #153a5b;
+    position: relative;
+    transition: all 1s;
+  }
+
+  &:hover {
+    button {
+      display: flex;
+      top: 0;
+      opacity: 1;
+    }
+    > * {
+      top: 0;
+    }
   }
 `;
 
@@ -189,7 +219,10 @@ function OurMission() {
         <Card $img="mission-1">
           <h1>Award winning design</h1>
           <div>When it comes to form and function, we’ve got it down.</div>
-          <button>Shop now</button>
+          <button>
+            <span>Shop now</span>
+            <box-icon name="arrow-back" rotate="180" color="gray"></box-icon>
+          </button>
         </Card>
         <Card $img="mission-2">
           <h1>The future of hydration</h1>
@@ -197,7 +230,10 @@ function OurMission() {
             PureVis™ and Nano Zero technology improves water quality for a
             brilliant hydration experience.
           </div>
-          <button>How it works</button>
+          <button>
+            <span>How it works</span>
+            <box-icon name="arrow-back" rotate="180" color="gray"></box-icon>
+          </button>
         </Card>
         <Card $img="mission-3">
           <h1>Better for you and the planet</h1>
@@ -205,7 +241,10 @@ function OurMission() {
             A portion of every purchase helps restore our oceans and brings
             clean water to communities in need.
           </div>
-          <button>Measure my impact</button>
+          <button>
+            <span>Measure my impact</span>
+            <box-icon name="arrow-back" rotate="180" color="gray"></box-icon>
+          </button>
         </Card>
       </div>
     </Main>
